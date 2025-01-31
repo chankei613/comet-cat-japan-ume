@@ -1,0 +1,216 @@
+.format-content{
+    word-break: break-all;
+    p{
+        margin: 1rem 0;
+        line-height: 1.85;
+    }
+    a{
+        text-decoration: underline;
+        color: var(--primary);
+    }
+    h1{
+        font-size: 3.2rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h2{
+        font-size: 2.6rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h3{
+        font-size: 2rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h4{
+        font-size: 1.6rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h5{
+        font-size: 1.4rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h6{
+        font-size: 1.3rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h1:first-child{
+        margin-top: 0;
+    }
+    h2:first-child{
+        margin-top: 0;
+    }
+    h3:first-child{
+        margin-top: 0;
+    }
+    h4:first-child{
+        margin-top: 0;
+    }
+    h5:first-child{
+        margin-top: 0;
+    }
+    h6:first-child{
+        margin-top: 0;
+    }
+    blockquote{
+        background: var(--thirdplace);
+        padding: 1rem;
+        p{
+            margin: 0;
+        }
+        p + p{
+            margin-top: 1em;
+        }
+        cite{
+            font-size: .75em;
+            font-style: italic;
+        }
+    }
+    table{
+        tr{}
+        th{
+            background: var(--thirdplace);
+            border: 1px solid var(--primary);
+            padding: .5rem;
+        }   
+        th.views{
+            
+        }
+        td{
+            padding: .5rem;
+            border: 1px solid var(--primary);
+        }
+        td.odd{}
+        td.even{}
+    }
+    dl{
+        margin: 1rem 0;
+        dt{
+            font-weight: bold;
+        }
+        dd + dt{
+            margin-top: 0.5rem;
+        }
+    }
+    ul{
+        padding-left: 1rem;
+        li{
+            line-height: 1.65;
+            list-style: disc;
+        }
+    }
+    ol{
+        padding-left: 1rem;
+        li{
+            line-height: 1.65;
+            list-style: decimal;
+        }
+    }
+    strong{
+        font-weight: bold;
+    }
+    address{
+        font-style: italic;
+    }
+    abbr{
+    
+    }
+    code{
+        font-style: italic;
+    }
+    pre{
+        background: var(--thirdplace);
+        padding: 1rem;
+        margin: 1rem 0;
+        word-break: break-all;
+        white-space: break-spaces;
+    }
+    var{
+    
+    }
+    em{
+        font-style: italic;
+    }
+    sub{
+        vertical-align: sub;
+        font-size: smaller;
+    }
+    figcaption{
+        font-size: 1.2rem;
+        margin: 1em 0 0;
+    }
+    .alignleft {
+        float: left;
+        margin: 1rem 1rem 1rem 0;
+        clear: both;
+    }
+    .alignright{
+        float: right;
+        margin: 1rem 0 1rem 1rem;
+        clear: both;
+    }
+    .aligncenter{
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        clear: both;
+        img {
+            margin: 0 auto;
+        }
+    }
+    .wp-caption-text{
+        margin: .5rem 0 0;
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    .wp-caption{
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .post-categories{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin-top: 1rem;
+        li{
+            list-style: none;
+        }
+    }
+    .sticky{
+        position: sticky;
+    }
+    .gallery-caption{
+        text-align: center;
+        font-size: .75rem;
+        margin-top: 0.5rem;
+    }
+
+    .cc-thumbnail{
+        margin: 0 0 1rem;
+        img{
+            width: 100%;
+        }
+    }
+    .cc-head{
+        padding: 0 0 1rem;
+        border-bottom: 1px solid var(--primary);
+        h1{
+            font-size: 2rem;
+        }
+    }
+    .cc-body{
+        margin-top: 2rem;
+    }
+}
+.bypostauthor{
+    background: var(--secondary);
+}
+.format-content::after {
+    content: " ";
+    display: block;
+    clear: both;
+}

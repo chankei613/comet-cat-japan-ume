@@ -1,0 +1,570 @@
+/*
+Theme URI: https://choco-chip.comet-cat.com/comet-cat-japan_ume/
+Theme Name: Comet Cat Japan_Ume
+Author: cometcatchip
+Author URI: https://choco-chip.comet-cat.com/
+Description: This is a very simple theme using Tailwindcss.
+Tags: blog, two-columns, right-sidebar,
+Version: 1.4.4
+Requires at least: 5.0
+Tested up to: 6.5
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: comet-cat-japan-ume
+
+Copyright notice: GNU General Public License. source LICENCE.txt
+
+*/
+
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+    background-color: #eee;
+    clip: auto !important;
+    clip-path: none;
+    color: #444;
+    display: block;
+    font-size: 1em;
+    height: auto;
+    left: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000; /* Above WP toolbar. */
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    html {
+        font-family: 'Montserrat','Noto Sans JP', sans-serif;
+        color: #222;
+    }
+    a{
+        transition: .4s;
+    }
+    a:hover{
+        opacity: 0.6;
+        
+    }
+}
+
+:root{
+--primary: #E16B8C;
+--secondary: #E6B3C1;
+--thirdplace: #F5E8EC;
+--text-primary: #222;
+--text-secondary: #373737;
+--text-thirdplace: #C8C8C8;
+}
+
+.hero{
+    img {
+        width: 100%;
+        height: 70vh;
+        object-fit: cover;
+        max-height: 90vh;
+    }
+}
+
+.site-navigation{
+    @media not all and (min-width: 768px) {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        /* background: var(--thirdplace); */
+        background: #fff;
+        z-index: 99;
+        opacity: 0;
+        visibility: hidden;
+        transition: .4s;
+        border-top: 1px solid var(--primary);
+        border-bottom: 1px solid var(--primary);
+    }
+    .menu {
+        display: flex;
+        @media not all and (min-width: 768px) {
+            display: block;
+        }
+    }
+    
+    li{
+        position: relative;
+    }
+    a{
+        display: block;
+        padding: .5rem .5rem;
+        font-size: 0.75rem;
+    }
+}
+.site-navigation.-active{
+    opacity: 1;
+    visibility: visible;
+}
+
+.widget{
+    ul,
+    ol{
+        padding: 1rem 0;
+        border-top: 1px solid #E16B8C;
+        border-bottom: 1px solid #E16B8C;
+    }
+    li{
+        font-size: 1rem;
+        margin-top: .75rem;
+    }
+}
+.widget + .widget {
+    margin-top: 2.5rem;
+}
+
+.wp-block-heading{
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: var(--primary);
+    font-weight: bold;
+}
+.wp-block-categories-list{
+    display: flex;
+    flex-wrap: wrap;
+    .cat-item{
+        margin: 0 .25rem .25rem 0;
+        font-size: 0.875rem;
+    }
+}
+
+.square-thumbnail{
+    width: 100%;
+    padding-top: 100%;
+    position: relative;
+    display: block;
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+
+.wp-block-search__button-outside {
+    .wp-block-search__label{
+        display: none;
+    }
+    .wp-block-search__input {
+        width: 80%;
+        border: 1px solid var(--secondary);
+    }
+    .wp-block-search__button {
+        width: 20%;
+        margin: 0;
+        background: var(--secondary);
+    }
+}
+
+.site-navbtn{
+    @media all and (min-width: 768px) {
+        display: none;
+    }
+}
+.site-navbtn::before{
+    content: '';
+    position: absolute;
+    background: var(--primary);
+    width: 80%;
+    height: 2px;
+    border-radius: 4px;
+    left: 10%;
+    transition: .4s;
+}
+.site-navbtn::after{
+    content: '';
+    position: absolute;
+    background: var(--primary);
+    width: 80%;
+    height: 2px;
+    border-radius: 4px;
+    left: 10%;
+    transition: .4s;
+}
+.site-navbtn::before{
+    top: 33%;
+}
+.site-navbtn::after{
+    top: 66%;
+}
+.site-navbtn.-active::before{
+    rotate: 45deg;
+}
+.site-navbtn.-active::after{
+    rotate: -45deg;
+}
+.site-navbtn.-active::before,
+.site-navbtn.-active::after{
+    top: 50%;
+}
+
+.format-content{
+    word-break: break-all;
+    p{
+        margin: 1rem 0;
+        line-height: 1.85;
+    }
+    a{
+        text-decoration: underline;
+        color: var(--primary);
+    }
+    h1{
+        font-size: 3.2rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h2{
+        font-size: 2.6rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h3{
+        font-size: 2rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h4{
+        font-size: 1.6rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h5{
+        font-size: 1.4rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h6{
+        font-size: 1.3rem;
+        margin: 1em 0 .5em;
+        font-weight: bold;
+    }
+    h1:first-child{
+        margin-top: 0;
+    }
+    h2:first-child{
+        margin-top: 0;
+    }
+    h3:first-child{
+        margin-top: 0;
+    }
+    h4:first-child{
+        margin-top: 0;
+    }
+    h5:first-child{
+        margin-top: 0;
+    }
+    h6:first-child{
+        margin-top: 0;
+    }
+    blockquote{
+        background: var(--thirdplace);
+        padding: 1rem;
+        p{
+            margin: 0;
+        }
+        p + p{
+            margin-top: 1em;
+        }
+        cite{
+            font-size: .75em;
+            font-style: italic;
+        }
+    }
+    table{
+        tr{}
+        th{
+            background: var(--thirdplace);
+            border: 1px solid var(--primary);
+            padding: .5rem;
+        }   
+        th.views{
+            
+        }
+        td{
+            padding: .5rem;
+            border: 1px solid var(--primary);
+        }
+        td.odd{}
+        td.even{}
+    }
+    dl{
+        margin: 1rem 0;
+        dt{
+            font-weight: bold;
+        }
+        dd + dt{
+            margin-top: 0.5rem;
+        }
+    }
+    ul{
+        padding-left: 1rem;
+        li{
+            line-height: 1.65;
+            list-style: disc;
+        }
+    }
+    ol{
+        padding-left: 1rem;
+        li{
+            line-height: 1.65;
+            list-style: decimal;
+        }
+    }
+    strong{
+        font-weight: bold;
+    }
+    address{
+        font-style: italic;
+    }
+    abbr{
+    
+    }
+    code{
+        font-style: italic;
+    }
+    pre{
+        background: var(--thirdplace);
+        padding: 1rem;
+        margin: 1rem 0;
+        word-break: break-all;
+        white-space: break-spaces;
+    }
+    var{
+    
+    }
+    em{
+        font-style: italic;
+    }
+    sub{
+        vertical-align: sub;
+        font-size: smaller;
+    }
+    figcaption{
+        font-size: 1.2rem;
+        margin: 1em 0 0;
+    }
+    .alignleft {
+        float: left;
+        margin: 1rem 1rem 1rem 0;
+        clear: both;
+    }
+    .alignright{
+        float: right;
+        margin: 1rem 0 1rem 1rem;
+        clear: both;
+    }
+    .aligncenter{
+        display: block;
+        text-align: center;
+        margin: 0 auto;
+        clear: both;
+        img {
+            margin: 0 auto;
+        }
+    }
+    .wp-caption-text{
+        margin: .5rem 0 0;
+        font-size: 0.75rem;
+        text-align: center;
+    }
+    .wp-caption{
+        max-width: 100%;
+        overflow: hidden;
+    }
+    .post-categories{
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+        margin-top: 1rem;
+        li{
+            list-style: none;
+        }
+    }
+    .sticky{
+        position: sticky;
+    }
+    .gallery-caption{
+        text-align: center;
+        font-size: .75rem;
+        margin-top: 0.5rem;
+    }
+
+    .cc-thumbnail{
+        margin: 0 0 1rem;
+        img{
+            width: 100%;
+        }
+    }
+    .cc-head{
+        padding: 0 0 1rem;
+        border-bottom: 1px solid var(--primary);
+        h1{
+            font-size: 2rem;
+        }
+    }
+    .cc-body{
+        margin-top: 2rem;
+    }
+}
+.bypostauthor{
+    background: var(--secondary);
+}
+.format-content::after {
+    content: " ";
+    display: block;
+    clear: both;
+}
+
+#comments-list {
+    padding-left: 0;
+    li{
+        padding: 1rem;
+        border: 1px solid var(--secondary);
+        list-style: none;
+    }
+    li + li {
+        margin-top: 2rem;
+    }
+    .comment-author{
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        margin: 0 0 1rem;
+    }
+    .avatar{
+        margin-right: 1rem;
+    }
+    .comment-meta{
+        
+    }
+
+}
+
+.nav-links{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .page-numbers{
+        font-size: 1.25rem;
+        margin: 0 .5rem;
+        
+    }
+    a{
+        color: var(--primary);
+        text-decoration: underline;
+    }
+}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+  }
+  
+  .screen-reader-text:focus {
+    background-color: #f1f1f1;
+    border-radius: 3px;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+    clip: auto !important;
+    clip-path: none;
+    color: #21759b;
+    display: block;
+    font-size: 14px;
+    font-size: 0.875rem;
+    font-weight: bold;
+    height: auto;
+    right: 5px;
+    line-height: normal;
+    padding: 15px 23px 14px;
+    text-decoration: none;
+    top: 5px;
+    width: auto;
+    z-index: 100000;
+    /* Above WP toolbar. */
+  }
+  
+  /* Do not show the outline on the skip link target. */
+  #content[tabindex="-1"]:focus {
+    outline: 0;
+  }
+
+.menu-item-has-children{
+    position: relative;
+}
+.sub-menu{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: .4s;
+    width: 240px;
+    background: #fff;
+    border-top: 2px solid var(--primary);
+    display: block;
+    @media not all and (min-width: 768px) {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        width: calc( 100% - 1em );
+        border-top: none;
+        padding-left: 1em;
+        li{
+            list-style: disc;
+            margin-left: 1em;
+        }
+        a{
+            padding-left: 0;
+        }
+    }
+}
+/* .menu-item-has-children:hover .sub-menu,
+.menu-item-has-children:focus .sub-menu{
+    opacity: 1;
+    visibility: visible;
+}
+.menu-item-has-children a.-focused + .sub-menu,
+.menu-item-has-children a:focus + .sub-menu{
+    opacity: 1;
+    visibility: visible;
+} */
+.menu-item-has-children:hover .sub-menu,
+.menu-item-has-children:focus-within .sub-menu,
+.menu-item-has-children a.-focused + .sub-menu {
+    opacity: 1;
+    visibility: visible;
+}
